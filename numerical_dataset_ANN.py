@@ -11,7 +11,7 @@ from sklearn.preprocessing import LabelEncoder
 labelencoder=LabelEncoder()
 dataset.iloc[:,1]=labelencoder.fit_transform(dataset.iloc[:,1].values)
 print(dataset.iloc[:,1])
-#sns.pairplot(dataset.iloc[:,1:6])
+
 
 X=dataset.iloc[:,2:32].values
 y=dataset.iloc[:,1].values
@@ -97,20 +97,3 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
