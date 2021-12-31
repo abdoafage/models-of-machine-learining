@@ -33,15 +33,3 @@ print(cm)
 model_accurcy=accuracy_score(y_test, y_pred)
 print(f'Model Accuracy : {model_accurcy}%')
 
-#ROC curve.
-from sklearn.metrics import roc_curve
-from matplotlib import pyplot
-ns_probs = [0 for _ in range(len(y_test))]
-ns_fpr, ns_tpr, _ = roc_curve(y_test, ns_probs)
-pyplot.plot(ns_fpr, ns_tpr, linestyle='--', label='No Skill')
-#from sklearn.metrics import plot_roc_curve
-#plot_roc_curve(classifier, X_test, y_test)
-
-# summarize history for loss
-
-
