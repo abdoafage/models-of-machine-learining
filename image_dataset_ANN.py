@@ -41,10 +41,8 @@ classifier = Sequential()
 classifier.add(Dense(units=512,kernel_initializer='he_uniform',activation='relu',input_dim=64))
 #second hidden layer
 classifier.add(Dense(units=256,kernel_initializer='he_uniform',activation='relu'))
-
 #second hidden layer
 classifier.add(Dense(units=128,kernel_initializer='he_uniform',activation='relu'))
-
 # last layer or output layer
 classifier.add(Dense(units=10,kernel_initializer='he_uniform',activation='softmax'))
 
@@ -54,8 +52,6 @@ classifier.add(Dense(units=10,kernel_initializer='he_uniform',activation='softma
 classifier.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['accuracy'])
 
 model=classifier.fit(X_train,y_train,batch_size=100,epochs=200)
-
-
 
 y_pred=classifier.predict(X_test)
 #y_pred=(y_pred>.5)
@@ -70,11 +66,6 @@ print("confusion matrix : \n",cm)
 
 #Model Accuracy.
 print(f'Model Accuracy : {model_accurcy}%')
-
-#ROC curve.
-#from sklearn.metrics import plot_roc_curve
-#plot_roc_curve(classifier, X_test, y_test)
-
 
 # list all data in history
 print(model.history.keys())
@@ -93,20 +84,3 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
